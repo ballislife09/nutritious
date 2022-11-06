@@ -4,7 +4,9 @@ import App from './App'
 import './index.css'
 
 // Import the functions you need from the SDKs you need
-import firebase from "firebase";
+import * as firebase from 'firebase/app';
+import * as firestore from 'firebase/firestore';
+import { getDoc } from 'firebase/firestore';
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -19,11 +21,20 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-firebase.initializeApp(firebaseConfig)
 
-const db = await firebase.firestore()
-let food = await db.collection('mealsdata')
-console.log(food.data())
+( async () => {
+  firebase.initializeApp(firebaseConfig)
+  const db = firestore.getFirestore();
+  let food = firestore.collection(db,'mealsdata')
+  console.log(food)
+  let docRef = firestore.doc(food,'LNd7xvmug9pJutv9qRGq')
+  let doc;
+  doc = await getDoc(docRef) 
+  console.log(doc.data())
+})();
+//console.log(doc.data())
+
+
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <App />

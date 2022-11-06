@@ -1,0 +1,33 @@
+.bar{
+    display: flex;
+    flex-direction: row;
+    width:100%;
+    justify-content: space-between;
+    row-gap: 0px;
+    background: rgba(20, 20, 20, 0.5);
+}
+
+.block{    
+    height: 80px;
+    width: 100%;
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button{
+    font-size: 1.5em;
+    border: 3px rgba(110, 110, 110, 0.1) solid;
+    border-radius: 0.5em;
+    background-color: rgb(186, 186, 186, 0.5);
+}
+
+button:hover{
+    background-color: rgb(186, 186, 186, 1);
+}
+
+.img{
+    max-width:100%;
+    max-height:100%;
+}
