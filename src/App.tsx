@@ -2,15 +2,34 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import './App.css'
 import MenuBar from './MenuBar'
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+} from "react-router-dom";
+import Form from './Form'
 function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <div className='mainpage'>
-      <MenuBar/>
-      <p style={{height:'3em'}}></p>
-      <button style={{margin:'2em', color:'#0bb2fa'}}>Find Our Monkey Cancer!</button>
-    </div>
+    <Router>
+    <Routes>
+      <Route
+        path="/"
+        element={
+          <div className='mainpage'>
+            <MenuBar/>
+            <p style={{height:'3em'}}></p>
+            <button style={{margin:'2em', color:'#0bb2fa'}}>Find Our Monkey Cancer!</button>
+          </div>
+        }
+      />
+      <Route
+        path="/form"
+        element={<Form />}
+      />
+    </Routes>
+  </Router>
   )
 }
 

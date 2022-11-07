@@ -9,7 +9,7 @@
 
 body{
   margin: 0px;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url('./public/url.png');
+  background-image: linear-gradient(rgb(0,0,0,0.5), rgba(0, 0, 0, 0.5)),url('./public/url.png');
   background-size:cover;
   background-position-y: -20em;
   font-family: 'monkeyfont';

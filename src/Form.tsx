@@ -1,9 +1,9 @@
 import './Form.css'
 
 function Form(){
-    const sections = ['Proteins','Carbohydrates','Monkeys']
+    const sections = ['A','B','C','D','E','F','G','H','I','J','K','L']
     return <div className='main'>
-        {sections.map(elem => (
+        {sections.map((elem,i) => (
             <div>
                 <div>
                     {elem}:
@@ -11,7 +11,7 @@ function Form(){
                     <input type="number"></input>
                     mg
                 </div>
-                <br></br>
+                <p style={{height:'1em'}}></p>
             </div>
         ))}
     </div>
